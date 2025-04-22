@@ -49,7 +49,7 @@ function App() {
     allTransactions = filterTransaction.map((t, i) => {
       return (
         <div
-          className={`w-full h-fit p-3 mb-2 rounded border-r-5 ${
+          className={`w-full  h-fit p-3 mb-2 rounded border-r-5 ${
             t.Type === "EXPENSE" ? "border-red-500" : "border-green-500"
           } flex justify-between bg-gray-100`}
           key={i}
@@ -63,14 +63,15 @@ function App() {
 
   return (
     <>
-      <div className=" w-100 m-auto mt-5  border-1 rounded-2xl p-2 ">
-        <div className="text-center text-xl font-bold p-4">
+      <div className="p-3 flex justify-center">
+      <div className=" w-full md:max-w-130 border-1 rounded-2xl p-2 ">
+        <div className="text-center md:text-xl font-bold">
           <h1> Expense Tracker </h1>
         </div>
 
-        <div className="flex mt-2 p-4 h-15 items-center mx-5 rounded  justify-between ">
+        <div className="flex mt-2 p-4 h-15 items-center rounded  justify-between ">
           <div
-            className={`font-bold text-lg ${
+            className={`font-bold md:text-lg ${
               Income - Expense > 0 ? "text-green-500" : "text-red-500"
             }`}
           >
@@ -146,17 +147,17 @@ function App() {
         )}
 
         <div className="flex mt-1.5 p-4 gap-4 h-30 items-center mx-5 rounded  justify-between">
-          <div className=" text-center w-40 h-25 px-2 py-2 border-1 rounded-2xl content-center">
+          <div className=" text-center w-[40%] h-25 px-2 py-2 border-1 rounded-2xl content-center">
             <h4 className="font-semibold">Expense</h4>
             <h2 className="font-bold text-xl text-red-600">{Expense} Rs</h2>
           </div>
-          <div className="text-center w-40 h-25 px-2 py-2 border-1 rounded-2xl content-center">
+          <div className="text-center w-[40%] h-25 px-2 py-2 border-1 rounded-2xl content-center">
             <h3 className="font-semibold">Income</h3>
             <h2 className="font-bold text-xl text-green-600">{Income} Rs</h2>
           </div>
         </div>
 
-        <div className="p-4 mx-5 h-50 flex flex-col gap-2 bg-gray-300 overflow-scroll rounded-2xl scrollbar-hide">
+        <div className="p-4 h-50 flex flex-col gap-2 bg-gray-300 overflow-scroll rounded-2xl scrollbar-hide">
           <h2 className="font-bold">Transactions</h2>
           <input
             value={searchQuery}
@@ -169,6 +170,7 @@ function App() {
           />
           <div className="">{allTransactions}</div>
         </div>
+      </div>
       </div>
     </>
   );
